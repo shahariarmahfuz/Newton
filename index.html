@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Archived Effect with Black Background</title>
+  <style>
+    body {
+      background-color: #000000;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow-y: auto;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .archived {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: linear-gradient(45deg, #1a1a1a, #000000, #1a1a1a);
+      background-size: 400% 400%;
+      animation: archivedAnimation 10s infinite;
+      z-index: -1;
+    }
+
+    @keyframes archivedAnimation {
+      0% {
+        background-position: 0% 0%;
+      }
+      100% {
+        background-position: 400% 400%;
+      }
+    }
+
+    .glass-box {
+      margin-top: 20px;
+      width: 300px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.8);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      color: #ffffff;
+      z-index: 2;
+    }
+
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+      transition: box-shadow 0.3s ease-in-out;
+    }
+
+    .profile-pic:hover {
+      box-shadow: 0 0 25px rgba(255, 255, 255, 1);
+    }
+
+    .content {
+      position: relative;
+      padding: 20px;
+      overflow: hidden;
+      text-align: left;
+      animation: contentFadeIn 3s ease-in-out;
+    }
+
+    @keyframes contentFadeIn {
+      0% {
+        transform: translateY(0%);
+        opacity: 0;
+      }
+      50% {
+        transform: translateY(0%);
+        opacity: 0.5;
+      }
+      100% {
+        transform: translateY(0%);
+        opacity: 1;
+      }
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-size: 13px;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+
+    .center-align {
+      text-align: center;
+    }
+
+    .background-text {
+      position: fixed;
+      bottom: 50px;
+      width: 100%;
+      background-color: #000000;
+      padding: 10px 0;
+      text-align: center;
+      font-size: 12px;
+      color: #888;
+      z-index: 0;
+      pointer-events: none; /* Disable pointer events to make sure it's not interactive */
+    }
+
+    .background-text a {
+      color: #F8F8FF;
+      text-decoration: none;
+      transition: color 0.3s ease-in-out;
+      padding: 0 10px;
+      pointer-events: auto; /* Re-enable pointer events for links */
+    }
+
+    .background-text a:hover {
+      color: #ffffff;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: #888;
+      width: 100%;
+      padding: 10px 0;
+      z-index: 1;
+      background-color: #000000;
+      position: relative;
+      margin-top: 20px; /* Footer এর উপরে কিছু ফাঁকা স্থান রাখা */
+     
+  </style>
+  <script>
+document.addEventListener('contextmenu', function(e) {
+    if (e.target.closest('.profile-picture')) {
+        e.preventDefault();
+    }
+});
+</script>
+</head>
+<body>
+  <div class="archived"></div>
+  <div class="glass-box">
+    <img src="https://i.ibb.co/MBB2JWc/IMG-20240615-202914.jpg" alt="Profile Picture" class="profile-pic">
+    <div class="content">
+      <h2 class="center-align">Isaac Newton</h2>
+      <p class="center-align" style="color: #cccccc; font-size: 16px;">learn about his life</p>
+     <p>Isaac Newton, born on January 4, 1643, in Woolsthorpe, Lincolnshire, England, was a pivotal figure in the scientific revolution and one of the most influential scientists in history. His contributions to mathematics, physics, astronomy, and several other disciplines laid the groundwork for many scientific advancements that followed. Newton's work was characterized by a blend of empirical observation and mathematical rigor, resulting in groundbreaking theories that transformed our understanding of the natural world.</p>
+
+<h3>Early Life and Education</h3>
+<p>Newton's early life was marked by hardship. His father died three months before he was born, and his mother remarried, leaving him in the care of his grandmother. Despite these challenges, Newton showed early signs of intellectual prowess. He attended the King's School in Grantham, where he developed a keen interest in mechanics and built models of machines.</p>
+
+<p>In 1661, Newton entered Trinity College, Cambridge, where he initially studied the standard curriculum, which was heavily influenced by Aristotelian philosophy. However, his interests soon shifted towards the works of modern philosophers and scientists such as Descartes, Galileo, and Kepler. Newton's voracious reading and self-directed study laid the foundation for his future discoveries.</p>
+
+<h3>Mathematical Contributions</h3>
+<p>Newton's most famous mathematical contribution is the development of calculus, independently and simultaneously with the German mathematician Gottfried Wilhelm Leibniz. Newton referred to his method as "the method of fluxions." Calculus provided a powerful mathematical tool for describing changes and allowed for the precise formulation of many physical theories.</p>
+
+<p>Newton's work on calculus was contained in his manuscript "Method of Fluxions," written in 1671 but published posthumously in 1736. His notation differed from Leibniz's, leading to a bitter dispute over the priority of the invention, which lasted long after both men had died.</p>
+
+<h3>Optics and Light</h3>
+<p>Newton made significant contributions to optics, particularly in understanding the nature of light. His experiments with prisms demonstrated that white light is composed of a spectrum of colors, which can be separated and recombined. This work contradicted the prevailing theory that white light was a fundamental entity.</p>
+
+<p>In 1672, Newton published his first scientific paper, "A New Theory about Light and Colours," in the Philosophical Transactions of the Royal Society. He proposed the particle theory of light, suggesting that light is made up of particles, or "corpuscles." This theory faced opposition but laid the groundwork for the development of modern optics.</p>
+
+<p>Newton also designed the first practical reflecting telescope, known as the Newtonian telescope, in 1668. This invention used a concave mirror to eliminate chromatic aberration caused by lenses, a significant improvement over existing refracting telescopes.</p>
+
+<h3>The Principia and Laws of Motion</h3>
+<p>Newton's most profound work, "Philosophiæ Naturalis Principia Mathematica," commonly known as the Principia, was first published in 1687. The Principia formulated the laws of motion and universal gravitation, forming the cornerstone of classical mechanics.</p>
+
+<p>1. <strong>First Law (Inertia)</strong>: An object will remain at rest or in uniform motion in a straight line unless acted upon by an external force.</p>
+<p>2. <strong>Second Law (F=ma)</strong>: The force acting on an object is equal to the mass of that object multiplied by its acceleration.</p>
+<p>3. <strong>Third Law (Action and Reaction)</strong>: For every action, there is an equal and opposite reaction.</p>
+
+<p>These laws not only explained the motion of objects on Earth but also described celestial phenomena, providing a unified framework that applied to both terrestrial and astronomical bodies.</p>
+
+<p>Newton's law of universal gravitation posited that every particle of matter in the universe attracts every other particle with a force directly proportional to the product of their masses and inversely proportional to the square of the distance between their centers. This revolutionary concept explained the elliptical orbits of planets and laid the groundwork for future work in astronomy and physics.</p>
+
+<h3>Later Life and Legacy</h3>
+<p>In addition to his scientific endeavors, Newton had a varied career. He served as the Warden and later Master of the Royal Mint, where he implemented measures to combat counterfeiting. Newton's dedication to this role significantly reformed the English currency system.</p>
+
+<p>Newton also served as the president of the Royal Society from 1703 until his death, influencing the direction of scientific research in Britain. Despite his immense contributions, Newton's later years were marred by disputes, including the calculus controversy with Leibniz and conflicts with fellow scientists like Robert Hooke.</p>
+
+<p>Newton's influence extended beyond his own time, shaping the course of science for centuries. His work in mechanics, optics, and mathematics formed the bedrock upon which later scientists, including Albert Einstein, built their theories. Newton's Principia remained the definitive reference on classical mechanics until the advent of quantum mechanics and relativity in the 20th century.</p>
+
+<h3>Personal Beliefs and Interests</h3>
+<p>Newton was a deeply private individual, with interests that extended beyond pure science. He was an avid alchemist, spending considerable time attempting to discover the philosopher's stone and other alchemical secrets. Newton's religious beliefs also played a significant role in his life. He was a devout, if unorthodox, Christian, writing extensively on theological subjects and biblical chronology.</p>
+
+<p>His investigations into alchemy and theology were largely kept secret during his lifetime, as they diverged from the empirical rigor that characterized his public scientific work. These pursuits illustrate the breadth of Newton's intellectual curiosity and his quest to understand the fundamental nature of reality.</p>
+
+<h3>Death and Legacy</h3>
+<p>Isaac Newton died on March 31, 1727, and was buried in Westminster Abbey. His death marked the end of an era in scientific thought, but his legacy has endured. Newton's work epitomized the transition from the Renaissance to the Enlightenment, where reason and empirical evidence began to dominate over tradition and superstition.</p>
+
+<p>In summary, Isaac Newton's life and work exemplify the spirit of scientific inquiry and discovery. His contributions to mathematics, physics, and astronomy are monumental, providing the tools and frameworks that have enabled countless advancements in our understanding of the universe. Newton's legacy as one of the greatest scientists of all time remains firmly established, his name synonymous with scientific genius and revolutionary thinking.</p>
+      
+    </div>
+  </div>
+  
+  <footer>
+    <p>&copy; 2024 Shahariar Mahfuz. All rights reserved.</p>
+  </footer>
+
+  <div class="background-text">
+    <a href="https://example.com">Back to Homepage</a>
+  </div>
+
+  </script>
+</body>
+</html>
